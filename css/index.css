@@ -1,0 +1,256 @@
+@font-face {
+    font-family: navi;
+    src: url(../fonts/Pasajero-95AL.ttf);
+}
+
+html{
+    background-color: black;
+}
+
+
+body{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+    color: gray;
+    overflow: hidden;
+}
+
+canvas{
+    width:100%;
+    height: 100%;
+}
+
+
+#cockpit{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(3.0);
+}
+
+#header{
+    position: absolute;
+    width: 100vw;
+    height: 15vh;
+    /*display: none;*/
+    transform: scale(3.0) translate(0,-20vh);
+}
+
+#content_in_cockpit{
+    display: none;
+    opacity: 0;
+}
+
+@keyframes zooms_out {
+0% {
+    transform: scale(3.0);
+    -webkit-transform: scale(3.0);
+}
+100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+}
+}
+
+@keyframes zooms_in {
+     0% {
+         transform: scale(1.0);
+         -webkit-transform: scale(1.0);
+     }
+     100% {
+         transform: scale(3.0);
+         -webkit-transform: scale(3.0);
+     }
+ }
+
+@keyframes translate_down {
+    0% {
+        transform: translate(0,-20vh);
+        -webkit-transform: translate(0,-20vh);
+    }
+    100% {
+        transform: translate(0,0);
+        -webkit-transform: translate(0,0);
+    }
+}
+
+@keyframes fade_out {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade_in{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+.zoom_out{
+    animation: zooms_out ease 2s forwards;
+    -webkit-animation: zooms_out ease 2s forwards;
+}
+
+.translate_down{
+    animation: translate_down ease 2s forwards;
+    -webkit-animation: translate_down ease 2s forwards;
+}
+
+.fade_out{
+    animation: fade_out ease 2s forwards;
+    -webkit-animation: fade_out ease 2s forwards;
+}
+
+.fade_in{
+    animation: fade_in ease 2s forwards;
+    -webkit-animation: fade_in ease 2s forwards;
+}
+
+#shipname{
+    width:40vw;
+    font-size: 3vw;
+    margin: 3vh 3vw;
+    position: absolute;
+    color: white;
+    font-family: navi, sans-serif;
+}
+
+#welcome{
+    width:40vw;
+    font-size: 10vw;
+    /*white-space: nowrap;*/
+    margin: 15vh 25vw;
+    position: absolute;
+    color: white;
+    font-family: navi, sans-serif;
+}
+
+.button {
+    margin: 65vh 40vw;
+    background: #f2f2f2;
+    width: 20vw;
+    height:10vh;
+    position: absolute;
+    border-radius: 2vw;
+    color: #4d4d4d;
+}
+
+.button p{
+    padding: 0;
+    margin: 0;
+    line-height: 10vh;
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.button:hover, .button:focus{
+    background: orange;
+    color: white;
+    cursor: pointer;
+}
+
+#go{
+    /*width:17vw;*/
+    font-size: 3vw;
+    margin: 2vh 0vw 0vh 77vw;
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+}
+
+.clickable{
+    color: white;
+}
+
+.clickable:hover, .clickable:focus{
+    color: orange;
+}
+
+#navi{
+    font-family: 'Orbitron', sans-serif;
+    width:40vw;
+    font-size: 2vw;
+    margin: 3vh 30vw;
+    color: white;
+    position: absolute;
+    list-style: none;
+}
+
+#navi li{
+    width: auto;
+    display: inline-block;
+    margin: 0 1vw;
+    cursor: pointer;
+}
+
+#navi li:hover, #navi li:focus{
+    color:orange;
+}
+
+
+
+/*radar*/
+#radar_plate{
+    position: absolute;
+    width: 100vw;
+    /*top:104.5vh;*/
+    /*left:52.7vw;*/
+    /*bottom: 0;*/
+}
+
+
+#radar {
+    background: linear-gradient(#333, #111);
+    box-shadow:
+            0 0 0 1px hsla(0, 0%, 0%, 0.5),
+            inset 0 0 0 1px hsla(0, 0%, 100%, 0.15)
+;
+    border-radius: 100%;
+    display: block;
+    width:18vw;
+    /*margin: 0 40vw;*/
+    left: 52.35vw;
+    position: absolute;
+    top:103.4vh;
+}
+
+
+
+#mars{
+    z-index: 100;
+}
+
+
+iframe{
+    display:none;
+    left:36%;
+    top: 20%;
+    border:0;
+    position: absolute;
+    outline: 0;
+    opacity: 0;
+    transition: all;
+}
+
+/*#loader {*/
+/*    !*position: relative;*!*/
+/*    right: 90px;*/
+/*    top: 10%;*/
+/*    width: .5%;*/
+/*    height: 1%;*/
+/*    border-radius: 100000%;*/
+/*    box-shadow: 0 0 10px 2px #ffc5c5;*/
+/*    background-color: #ff4c33;*/
+/*}*/
+
